@@ -1,11 +1,12 @@
-<h1 class="text-lg font-bold">Information</h1>
-<img src="assets/webvm_hero.png" alt="WebVM Logo" class="w-56 h-56 object-contain self-center">
-<p>WebVM is a virtual Linux environment running in the browser via WebAssembly</p>
-<p>It is based on:</p>
+<h1 class="text-lg font-bold">c-drill</h1>
+<p>Terminal d'entraînement au C, dans ton navigateur. Rien à installer, aucun compte.</p>
 <ul class="list-disc list-inside">
-	<li><a class="underline" target="_blank" href="https://cheerpx.io/">CheerpX</a>: x86 JIT in Wasm</li>
-	<li><a class="underline" target="_blank" href="https://xtermjs.org/">Xterm.js</a>: interactive terminal</li>
-	<li>Local/private <a class="underline" target="_blank" href="https://cheerpx.io/docs/guides/File-System-support">file storage</a></li>
-	<li><a class="underline" target="_blank" href="https://cheerpx.io/docs/guides/Networking">Networking</a> via <a class="underline" target="_blank" href="https://tailscale.com/">Tailscale</a></li>
+	<li>Tape <code>examshell</code> pour (re)lancer le simulateur.</li>
+	<li>Dans un exercice : <code>vim</code> pour éditer ton code, <code>grademe</code> pour le tester.</li>
+	<li>Page figée (boucle infinie vide <code>while(1);</code>) ? Recharge la page.</li>
+	<li>Tes rendus sont gardés dans ce navigateur, mais une mise à jour du site les efface.</li>
+	<li>Après une mise à jour, recharge la page deux fois.</li>
+	<li>Premier lancement lent (telechargement), plus rapide ensuite.</li>
 </ul>
+<p class="text-sm text-gray-300">C practice terminal in your browser. Type <code>examshell</code> to start.</p>
 <slot></slot>

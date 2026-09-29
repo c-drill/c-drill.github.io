@@ -377,7 +377,10 @@
 				<canvas class="w-full h-full cursor-none" id="display"></canvas>
 			</div>
 		{/if}
-		<div class="absolute top-0 bottom-0 {sideBarPinned ? 'left-[23.5rem]' : 'left-14'} right-0 p-1 scrollbar" id="console">
+		<div class="absolute top-0 h-6 {sideBarPinned ? 'left-[23.5rem]' : 'left-14'} right-0 px-2 text-xs leading-6 truncate bg-neutral-800 text-gray-300">
+			Page figée ? Recharge-la &middot; Rendus gardés dans ce navigateur (une mise à jour du site les efface) &middot; Site mis à jour ? Recharge 2 fois &middot; Aide : icône (i) à gauche
+		</div>
+		<div class="absolute top-6 bottom-0 {sideBarPinned ? 'left-[23.5rem]' : 'left-14'} right-0 p-1 scrollbar" id="console">
 		</div>
 	</div>
 </main>

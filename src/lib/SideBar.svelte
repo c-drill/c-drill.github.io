@@ -13,14 +13,9 @@
 	import { cpuActivity, diskActivity, aiActivity } from './activities.js';
 	const icons = [
 		{ icon: 'fas fa-info-circle', info: 'Information', activity: null },
-		{ icon: 'fas fa-wifi', info: 'Networking', activity: null },
 		{ icon: 'fas fa-microchip', info: 'CPU', activity: cpuActivity },
 		{ icon: 'fas fa-compact-disc', info: 'Disk', activity: diskActivity },
-		{ icon: 'fas fa-robot', info: 'ClaudeAI', activity: aiActivity },
 		null,
-		{ icon: 'fas fa-book-open', info: 'Posts', activity: null },
-		{ icon: 'fab fa-discord', info: 'Discord', activity: null },
-		{ icon: 'fab fa-github', info: 'GitHub', activity: null },
 	];
 	let dispatch = createEventDispatcher();
 	let activeInfo = null; // Tracks currently visible info.
