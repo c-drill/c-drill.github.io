@@ -113,7 +113,14 @@ jobs:
       - run: sudo mkdir -p $DEPLOY_DIR
 
       # Build the i386 Dockerfile image.
-      - run: docker build . --tag $TAG --file ${{ github.event.inputs.DOCKERFILE_PATH }} --platform=i386
+      - run: |
+          set -o pipefail
+          docker build . --progress=plain --tag $TAG --file ${{ github.event.inputs.DOCKERFILE_PATH }} --platform=i386 2>&1 | tee /tmp/docker_build.log
+
+      # c-drill: surface build-time check failures as annotations (readable through the API)
+      - name: Report docker build errors
+        if: failure()
+        run: grep -E 'CHECK FAILED|web check|error|Error|No such|not found|failed' /tmp/docker_build.log | tail -40 | sed 's/^/::error::/'
       
       # Run the docker image so that we can export the container.
       # Run the Docker container with the Google Public DNS nameservers: 8.8.8.8, 8.8.4.4
