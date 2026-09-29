@@ -9,7 +9,8 @@ onMount(async () => {
 	try {
 		const dbs = await indexedDB.databases();
 		for (const db of dbs)
-			if (db.name && db.name.startsWith("blocks_") && db.name !== cacheId)
+			// names look like "cjFS_/blocks_<image>/": drop the caches of older images
+			if (db.name && db.name.includes("blocks_") && !db.name.includes(cacheId + "/"))
 				indexedDB.deleteDatabase(db.name);
 	} catch (e) { /* not supported: keep old caches */ }
 });

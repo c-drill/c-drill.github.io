@@ -242,8 +242,28 @@
 		if(processCallback)
 			processCallback(processCount);
 	}
+	// c-drill: only ONE page at a time may run the VM. Two pages writing the
+	// same saved disk (two tabs, or the reload done on the first visit) corrupt
+	// its files. The second page waits until the first one is closed.
+	async function acquireVmLock()
+	{
+		if(!navigator.locks)
+			return;
+		let waiting = true;
+		const got = new Promise((resolve) => {
+			navigator.locks.request("c-drill-vm", () => { resolve(); return new Promise(() => {}); });
+		});
+		const t = setTimeout(() => {
+			if(waiting && term)
+				term.write("\r\nc-drill est deja ouvert dans un autre onglet : ferme-le, cette page demarrera ensuite.\r\nc-drill is already open in another tab: close it and this page will start.\r\n");
+		}, 1500);
+		await got;
+		waiting = false;
+		clearTimeout(t);
+	}
 	async function initCheerpX()
 	{
+		await acquireVmLock();
 		const CheerpX = await import('@leaningtech/cheerpx');
 		var blockDevice = null;
 		switch(configObj.diskImageType)
