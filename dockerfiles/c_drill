@@ -23,6 +23,15 @@ COPY ./dockerfiles/web /tmp/web
 # the image build fails if a single check fails.
 RUN cd /home/user/c-drill && patch -p1 < /tmp/web/web.patch && \
 	bash /tmp/web/check.sh /home/user/c-drill && rm -rf /tmp/web /home/user/c-drill/rendu /home/user/c-drill/trace
+# Files read by grademe (compiler, assembler, linker, headers...). The page
+# downloads the disk lazily over the network: reading them in the background
+# at startup makes the first grademe much faster.
+RUN dpkg -L gcc-8 cpp-8 binutils-i686-linux-gnu libbinutils libgcc-8-dev libc6-dev \
+	libisl19 libmpc3 libmpfr6 libgmp10 2>/dev/null | sort -u | while read -r f; do \
+	  [ -f "$f" ] && [ ! -L "$f" ] || continue; \
+	  case "$f" in /usr/share/*) ;; *.a) case "$f" in *nonshared*|*/libgcc.a|*/libgcc_eh.a) echo "$f";; esac;; *) echo "$f";; esac; \
+	done > /etc/c-drill-prefetch.list && wc -l /etc/c-drill-prefetch.list && \
+	xargs -a /etc/c-drill-prefetch.list du -ch | tail -1
 COPY --chown=user:user ./dockerfiles/c_drill.bashrc /tmp/c_drill.bashrc
 COPY --chown=user:user ./dockerfiles/c_drill.tmux.conf /home/user/.tmux.conf
 RUN cat /tmp/c_drill.bashrc >> /home/user/.bashrc && rm /tmp/c_drill.bashrc && \
