@@ -21,6 +21,10 @@ COPY --chown=user:user ./dockerfiles/c_drill.tmux.conf /home/user/.tmux.conf
 RUN cat /tmp/c_drill.bashrc >> /home/user/.bashrc && rm /tmp/c_drill.bashrc && \
 	chmod +x /home/user/c-drill/examshell /home/user/c-drill/install.sh /home/user/c-drill/.resources/checker.sh
 
+# The WebVM build exports the container with `docker cp`, which loses uid/gid
+# (everything ends up owned by root): make the user's home writable for anyone.
+RUN chmod -R a+rwX /home/user
+
 WORKDIR /home/user/
 ENV HOME="/home/user" TERM="xterm-256color" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="C.UTF-8"
 CMD [ "/bin/bash", "--login" ]
