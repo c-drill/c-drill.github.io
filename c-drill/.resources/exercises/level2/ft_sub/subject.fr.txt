@@ -1,0 +1,11 @@
+Nom du programme : ft_sub
+Fichiers rendus  : ft_sub.c
+Fonctions autorisees : aucune
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui prend un pointeur sur un int et soustrait 1 a la valeur
+pointee.
+
+Votre fonction doit etre prototypee ainsi :
+
+void	ft_sub(int *ptr);

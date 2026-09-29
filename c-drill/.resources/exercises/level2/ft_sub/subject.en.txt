@@ -1,0 +1,11 @@
+Assignment name  : ft_sub
+Expected files   : ft_sub.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that takes a pointer to an int and subtracts 1 from the value
+it points to.
+
+Your function must be declared as follows:
+
+void	ft_sub(int *ptr);

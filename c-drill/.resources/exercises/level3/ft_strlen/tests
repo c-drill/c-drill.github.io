@@ -1,0 +1,22 @@
+strlen____|""|
+strlen__a__|"a"|
+strlen__ab__|"ab"|
+strlen__hello__|"hello"|
+strlen__hello_world|"hello world"|
+strlen__42_is_great|"42 is great"|
+strlen_______|"   "|
+strlen__abcdefghijk|"abcdefghijklmnop"|
+strlen__z__|"z"|
+strlen__________|"!@#$%^"|
+strlen__a_b_c_d_e__|"a b c d e"|
+strlen__tab_ttab__|"tab\ttab"|
+strlen__lorem_ipsum|"lorem ipsum dolor"|
+strlen__1234567890_|"1234567890"|
+strlen__UPPERlower_|"UPPERlower"|
+strlen__one__|"one"|
+strlen__two_words__|"two words"|
+strlen__three__spac|"three  spaces"|
+strlen__end___|"end "|
+strlen___start__|" start"|
+strlen__mixEd_123__|"mixEd 123 !!!"|
+strlen__single__|"single"|

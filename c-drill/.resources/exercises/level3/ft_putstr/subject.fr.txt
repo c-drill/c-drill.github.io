@@ -1,0 +1,10 @@
+Nom du programme : ft_putstr
+Fichiers rendus  : ft_putstr.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui affiche une chaine de caracteres sur la sortie standard.
+
+Votre fonction doit etre prototypee ainsi :
+
+void	ft_putstr(char *str);

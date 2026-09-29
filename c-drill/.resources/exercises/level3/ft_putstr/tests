@@ -1,0 +1,22 @@
+putstr____|""|
+putstr__a__|"a"|
+putstr__hello__|"hello"|
+putstr__hello_world|"hello world"|
+putstr__42___|"42!"|
+putstr_____spaces__|"   spaces   "|
+putstr__MixedCase__|"MixedCase"|
+putstr__1234567890_|"1234567890"|
+putstr__symbols____|"symbols !@#"|
+putstr__line_one__|"line one"|
+putstr__________|"éàü"|
+putstr__end__|"end"|
+putstr__a_b_c__|"a b c"|
+putstr__long_string|"long string here yes"|
+putstr__Z__|"Z"|
+putstr__tabs_tinsid|"tabs\tinside"|
+putstr__one_two_thr|"one two three"|
+putstr_______|"..."|
+putstr__quote_s__|"quote's"|
+putstr__double_word|"double word"|
+putstr__final_test_|"final test string"|
+putstr__x__|"x"|

@@ -1,0 +1,22 @@
+none||
+two|"a" "b"|
+r35__abcdef__|"abcdef"|
+r35__HelloWorl|"HelloWorld!"|
+r35__ab__|"ab"|
+r35____|""|
+r35__a__|"a"|
+r35__abc__|"abc"|
+r35__abcde__|"abcde"|
+r35__xyz__|"xyz"|
+r35__123456789|"1234567890"|
+r35__hello_wor|"hello world"|
+r35__positionm|"positionmatters"|
+r35__abcdefghi|"abcdefghijklmno"|
+r35__MixedCASE|"MixedCASE123"|
+r35__z__|"z"|
+r35__longer_st|"longer string test here"|
+r35__tenletter|"tenletters"|
+r35__the_three|"the three five test"|
+r35_______|"..."|
+r35__abcdefghi|"abcdefghijklmnopqrstuvwxyz"|
+r35__short__|"short"|

@@ -1,0 +1,27 @@
+Nom du programme : alpha_mirror
+Fichiers rendus  : alpha_mirror.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme alpha_mirror qui prend une chaine et l'affiche apres en
+avoir remplace chaque caractere alphabetique par le caractere alphabetique
+oppose, suivie d'un retour a la ligne.
+
+'a' devient 'z', 'Z' devient 'A'
+'d' devient 'w', 'M' devient 'N'
+
+Etc...
+
+La casse n'est pas changee.
+
+Si le nombre d'arguments n'est pas 1, affiche juste un retour a la ligne.
+
+Exemples :
+
+$>./alpha_mirror "abc"
+zyx
+$>./alpha_mirror "My horse is Amazing." | cat -e
+Nb slihv rh Znzarmt.$
+$>./alpha_mirror | cat -e
+$
+$>

@@ -1,0 +1,10 @@
+Assignment name  : ft_stars
+Expected files   : ft_stars.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that displays seven '*' characters followed by a newline.
+
+Example:
+$> ./ft_stars | cat -e
+*******$

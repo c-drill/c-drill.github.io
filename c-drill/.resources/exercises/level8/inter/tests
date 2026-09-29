@@ -1,0 +1,20 @@
+none||
+one|"abc"|
+int__padinton_|"padinton" "paqefwtdjetyiytjneytjoeyjnejeyj"|
+int__abc___cde|"abc" "cde"|
+int__hello___w|"hello" "world"|
+int__aaa___a__|"aaa" "a"|
+int__abc___xyz|"abc" "xyz"|
+int__same___sa|"same" "same"|
+int_____abc__|"" "abc"|
+int__abc_____|"abc" ""|
+int__aabbcc___|"aabbcc" "abc"|
+int__The___the|"The" "the"|
+int__12345___1|"12345" "13579"|
+int__aeiou___h|"aeiou" "hello world"|
+int__abcdef___|"abcdef" "fedcba"|
+int__repeat___|"repeat" "eee"|
+int__xyz___zyx|"xyz" "zyx"|
+int__one_two__|"one two" "two one"|
+int__AaBb___ab|"AaBb" "ab"|
+int__mississip|"mississippi" "sip"|

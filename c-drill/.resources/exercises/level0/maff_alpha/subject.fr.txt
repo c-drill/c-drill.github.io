@@ -1,0 +1,11 @@
+Nom du programme : maff_alpha
+Fichiers rendus  : maff_alpha.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui affiche l'alphabet, les lettres paires en majuscule et
+les lettres impaires en minuscule, suivi d'un retour a la ligne.
+
+Exemple :
+$> ./maff_alpha | cat -e
+aBcDeFgHiJkLmNoPqRsTuVwXyZ$

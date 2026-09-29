@@ -1,0 +1,11 @@
+Assignment name  : ft_putnbr
+Expected files   : ft_putnbr.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that displays the number passed as a parameter, on the standard
+output. The number can be negative.
+
+Your function must be declared as follows:
+
+void	ft_putnbr(int nb);

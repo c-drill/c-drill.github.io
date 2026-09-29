@@ -1,0 +1,11 @@
+Nom du programme : ft_mul
+Fichiers rendus  : ft_mul.c
+Fonctions autorisees : aucune
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui prend un pointeur sur un int et multiplie par 2 la
+valeur pointee.
+
+Votre fonction doit etre prototypee ainsi :
+
+void	ft_mul(int *ptr);

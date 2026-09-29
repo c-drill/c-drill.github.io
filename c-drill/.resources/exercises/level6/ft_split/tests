@@ -1,0 +1,27 @@
+split____|""|
+split__hello__|"hello"|
+split__hello_wor|"hello world"|
+split____leading|"  leading"|
+split__trailing_|"trailing  "|
+split__multiple_|"multiple   spaces"|
+split__a_b_c_d_e|"a b c d e"|
+split__one__|"one"|
+split______|"  "|
+split__tab_there|"tab\there"|
+split__mix_of_tw|"mix of\twords\nhere"|
+split__42_is_the|"42 is the answer"|
+split__single___|"single    word    each"|
+split____surroun|"  surrounded  "|
+split__x_y__|"x y"|
+split__the_quick|"the quick brown fox"|
+split__lorem_ips|"lorem ipsum"|
+split__a__b__c__|"a  b  c"|
+split__end___|"end "|
+split___start__|" start"|
+split__just_one_|"just_one_word"|
+split__UP_low_UP|"UP low UP"|
+split_realtab|$'word1\tword2\tword3'|
+split_realnl|$'line1\nline2\nline3'|
+split_mixsep|$'a b\tc\nd'|
+split_tabpad|$'  x\t\ty  '|
+split_nlend|$'end1\nend2\n'|

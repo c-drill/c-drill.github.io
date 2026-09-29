@@ -1,0 +1,11 @@
+Assignment name  : occ_a
+Expected files   : occ_a.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that counts and returns the number of 'a' characters in the
+string passed as a parameter.
+
+Your function must be declared as follows:
+
+int	occ_a(char *str);

@@ -1,0 +1,11 @@
+Assignment name  : ft_strlen
+Expected files   : ft_strlen.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that counts and returns the length of a string passed as a
+parameter.
+
+Your function must be declared as follows:
+
+int	ft_strlen(char *str);

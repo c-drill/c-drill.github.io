@@ -1,0 +1,28 @@
+Assignment name  : search_and_replace
+Expected files   : search_and_replace.c
+Allowed functions: write, exit
+--------------------------------------------------------------------------------
+
+Write a program called search_and_replace that takes 3 arguments: a string,
+then a letter to replace, then its replacement letter. It displays the first
+string, replacing every occurrence of the 2nd argument by the 3rd, followed by
+a newline.
+If the number of arguments is not 3, the program displays a newline.
+If the 2nd or 3rd argument is not a single character, the program displays a
+newline.
+If the 2nd argument does not appear in the string, the string is displayed
+unchanged, followed by a newline.
+
+Examples:
+$> ./search_and_replace "Papache est un sabre" "a" "o" | cat -e
+Popoche est un sobre$
+$> ./search_and_replace "zaz" "art" "zul" | cat -e
+$
+$> ./search_and_replace "zaz" "r" "u" | cat -e
+zaz$
+$> ./search_and_replace "jacob" "a" "b" "c" "e" | cat -e
+$
+$> ./search_and_replace "ZoZ eT Dovid oiME le METol." "o" "a" | cat -e
+ZaZ eT David aiME le METal.$
+$> ./search_and_replace "wNcOre Un ExEmPle Pas Facilw a Ecrirw " "w" "e" | cat -e
+eNcOre Un ExEmPle Pas Facile a Ecrire $

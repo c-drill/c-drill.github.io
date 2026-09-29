@@ -1,0 +1,28 @@
+Nom du programme : replace_3_5
+Fichiers rendus  : replace_3_5.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend une chaine de caracteres en argument et l'affiche
+en remplacant chaque caractere selon sa position (en commencant a 1) :
+- si la position est un multiple de 3, il affiche '5' ;
+- sinon, si la position est un multiple de 5, il affiche '3' ;
+- sinon, il affiche le caractere tel quel.
+La sortie est suivie d'un retour a la ligne.
+Si le nombre d'arguments est different de 1, le programme affiche un retour a la
+ligne.
+Une position multiple de 15 est traitee par la regle du multiple de 3 (elle
+affiche '5').
+
+Exemples :
+$> ./replace_3_5 "abcdef" | cat -e
+ab5d35$
+$> ./replace_3_5 "HelloWorld!" | cat -e
+He5l35or53!$
+$> ./replace_3_5 "abcdefghijklmno" | cat -e
+ab5d35gh53k5mn5$
+$> ./replace_3_5 | cat -e
+$
+
+Note : exercice reconstitue a partir de retours de piscineux - le nom, la
+consigne ou les exemples exacts peuvent legerement differer du vrai examen.

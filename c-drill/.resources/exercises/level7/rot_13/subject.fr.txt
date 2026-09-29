@@ -1,0 +1,22 @@
+Nom du programme : rot_13
+Fichiers rendus  : rot_13.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend une chaine et l'affiche en remplacant chacune de
+ses lettres par la lettre 13 positions plus loin dans l'alphabet.
+'z' devient 'm' et 'Z' devient 'M'. La casse reste inchangee.
+La sortie est suivie d'un retour a la ligne.
+Si le nombre d'arguments n'est pas 1, le programme affiche un retour a la ligne.
+
+Exemples :
+$> ./rot_13 "abc" | cat -e
+nop$
+$> ./rot_13 "My horse is Amazing." | cat -e
+Zl ubefr vf Nznmvat.$
+$> ./rot_13 "AkjhZ zLKIJz , 23y " | cat -e
+NxwuM mYXVWm , 23l $
+$> ./rot_13 | cat -e
+$
+$> ./rot_13 "" | cat -e
+$

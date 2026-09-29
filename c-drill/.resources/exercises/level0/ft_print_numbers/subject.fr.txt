@@ -1,0 +1,10 @@
+Nom du programme : ft_print_numbers
+Fichiers rendus  : ft_print_numbers.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui affiche tous les chiffres dans l'ordre croissant.
+
+Votre fonction doit etre prototypee ainsi :
+
+void	ft_print_numbers(void);

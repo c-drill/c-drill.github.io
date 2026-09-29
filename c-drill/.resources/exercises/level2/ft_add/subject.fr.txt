@@ -1,0 +1,11 @@
+Nom du programme : ft_add
+Fichiers rendus  : ft_add.c
+Fonctions autorisees : aucune
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui prend un pointeur sur un int et ajoute 1 a la valeur
+pointee.
+
+Votre fonction doit etre prototypee ainsi :
+
+void	ft_add(int *ptr);

@@ -1,0 +1,20 @@
+Nom du programme : inter
+Fichiers rendus  : inter.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend deux chaines et affiche, sans doublons, les
+caracteres presents dans les deux chaines, dans l'ordre ou ils apparaissent
+dans la premiere.
+La sortie est suivie d'un retour a la ligne.
+Si le nombre d'arguments n'est pas 2, le programme affiche un retour a la ligne.
+
+Exemples :
+$> ./inter "padinton" "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+padinto$
+$> ./inter ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6ewg4$
+$> ./inter "rien" "cette phrase ne cache rien" | cat -e
+rien$
+$> ./inter | cat -e
+$

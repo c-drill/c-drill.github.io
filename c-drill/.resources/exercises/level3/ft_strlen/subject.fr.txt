@@ -1,0 +1,11 @@
+Nom du programme : ft_strlen
+Fichiers rendus  : ft_strlen.c
+Fonctions autorisees : aucune
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui compte et renvoie la longueur d'une chaine passee en
+parametre.
+
+Votre fonction doit etre prototypee ainsi :
+
+int	ft_strlen(char *str);

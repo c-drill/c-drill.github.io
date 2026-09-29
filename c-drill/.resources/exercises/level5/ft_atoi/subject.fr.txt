@@ -1,0 +1,12 @@
+Nom du programme : ft_atoi
+Fichiers rendus  : ft_atoi.c
+Fonctions autorisees : aucune
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui convertit la chaine de caracteres str en un nombre
+entier (type int) et le renvoie. Elle fonctionne comme la fonction standard
+atoi(const char *str), voir le man.
+
+Votre fonction doit etre prototypee ainsi :
+
+int	ft_atoi(const char *str);

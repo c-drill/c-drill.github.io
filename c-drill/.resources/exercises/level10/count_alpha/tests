@@ -1,0 +1,25 @@
+ca_1|abbcc|
+ca_2|"abbcc"|
+ca_3|"My Hyze 47y 7."|
+ca_empty|""|
+ca_hello|"Hello, World!"|
+ca_aaa|aaa|
+ca_AAA|AAA|
+ca_mixcase|AaAbBc|
+ca_nums|12345|
+ca_spaces|"   "|
+ca_single|z|
+ca_abcABC|abcABC|
+ca_pangram|"The quick brown fox jumps over the lazy dog"|
+ca_miss|Mississippi|
+ca_symbols|"!@#%^&*()"|
+ca_one|a|
+ca_2args|"a" "b"|
+ca_0args||
+ca_3args|"x" "y" "z"|
+ca_alt|aAaAaA|
+ca_prog|"Programming 101"|
+ca_xyz|xyzXYZ|
+ca_banana|banana|
+ca_padded|"  spaced  words  "|
+ca_42|"42Born2Code"|

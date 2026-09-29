@@ -1,0 +1,22 @@
+Nom du programme : rotone
+Fichiers rendus  : rotone.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend une chaine et l'affiche en remplacant chacune de
+ses lettres par la suivante dans l'alphabet.
+'z' devient 'a' et 'Z' devient 'A'. La casse reste inchangee.
+La sortie est suivie d'un retour a la ligne.
+Si le nombre d'arguments n'est pas 1, le programme affiche un retour a la ligne.
+
+Exemples :
+$> ./rotone "abc" | cat -e
+bcd$
+$> ./rotone "Les stagiaires du staff ne sentent pas toujours tres bon." | cat -e
+Mft tubhjbjsft ev tubgg of tfoufou qbt upvkpvst usft cpo.$
+$> ./rotone "AkjhZ zLKIJz , 23y " | cat -e
+BlkiA aMLJKa , 23z $
+$> ./rotone | cat -e
+$
+$> ./rotone "" | cat -e
+$

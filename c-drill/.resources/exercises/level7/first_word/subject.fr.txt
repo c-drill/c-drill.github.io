@@ -1,0 +1,27 @@
+Nom du programme : first_word
+Fichiers rendus  : first_word.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend une chaine de caracteres en parametre, et qui
+affiche le premier mot de cette chaine, suivi d'un retour a la ligne.
+
+On appelle "mot" une portion de chaine de caracteres delimitee soit par des
+espaces et/ou des tabulations, soit par le debut / fin de la chaine.
+
+Si le nombre de parametres transmis est different de 1, ou s'il n'y a aucun mot
+a afficher, le programme affiche un retour a la ligne.
+
+Exemples :
+
+$> ./first_word "FOR PONY" | cat -e
+FOR$
+$> ./first_word "this        ...       is sparta, then again, maybe    not" | cat -e
+this$
+$> ./first_word "   " | cat -e
+$
+$> ./first_word "a" "b" | cat -e
+$
+$> ./first_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
+$>

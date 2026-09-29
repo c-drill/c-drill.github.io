@@ -1,0 +1,25 @@
+Nom du programme : count_alpha
+Fichiers rendus  : count_alpha.c
+Fonctions autorisees : write, printf
+--------------------------------------------------------------------------------
+
+Ecrire un programme nomme count_alpha qui prend une chaine et affiche le nombre
+d'occurrences de ses caracteres alphabetiques. Les autres caracteres ne sont pas
+comptes. L'ordre est l'ordre d'apparition dans la chaine. L'affichage se termine
+par un retour a la ligne.
+
+Le format est celui des exemples.
+
+Si le nombre d'arguments n'est pas 1, afficher seulement un retour a la ligne.
+
+Exemples :
+$> ./count_alpha abbcc
+1a, 2b, 2c
+$> ./count_alpha "abbcc"
+1a, 2b, 2c
+$> ./count_alpha "abbcc" "dddeef" | cat -e
+$
+$> ./count_alpha "My Hyze 47y 7." | cat -e
+1m, 3y, 1h, 1z, 1e$
+$> ./count_alpha "" | cat -e
+$

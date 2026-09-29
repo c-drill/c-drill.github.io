@@ -1,0 +1,13 @@
+#!/bin/bash
+# Launcher. Resolves symlinks by hand: `readlink -f` does not exist on older
+# macOS (BSD readlink), plain `readlink` does everywhere.
+SELF="${BASH_SOURCE[0]:-$0}"
+while [ -L "$SELF" ]; do
+    LINK="$(readlink "$SELF")"
+    case "$LINK" in
+        /*) SELF="$LINK" ;;
+        *)  SELF="$(dirname "$SELF")/$LINK" ;;
+    esac
+done
+DIR="$(cd "$(dirname "$SELF")" && pwd)"
+cd "$DIR/.resources/main" && bash menu.sh

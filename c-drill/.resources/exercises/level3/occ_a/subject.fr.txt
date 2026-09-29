@@ -1,0 +1,11 @@
+Nom du programme : occ_a
+Fichiers rendus  : occ_a.c
+Fonctions autorisees : aucune
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui compte et renvoie le nombre de caracteres 'a' presents
+dans la chaine passee en parametre.
+
+Votre fonction doit etre prototypee ainsi :
+
+int	occ_a(char *str);

@@ -1,0 +1,21 @@
+none||
+last__hello__|"hello"|
+last__first___s|"first" "second"|
+last__zaz___man|"zaz" "mange" "des" "chats"|
+last__one___two|"one" "two" "three"|
+last__only__|"only"|
+last__a___b__|"a" "b"|
+last__x___with_|"x" "with spaces last"|
+last__42___43__|"42" "43" "44"|
+last__UPPER___l|"UPPER" "lower"|
+last__x___y___z|"x" "y" "z" "w"|
+last__single_wo|"single word"|
+last__the___qui|"the" "quick" "brown"|
+last___________|"!@#" "$%^"|
+last__ignored__|"ignored" "last one"|
+last__start__|"start"|
+last__a___b___m|"a" "b" "multi word last"|
+last__num123___|"num123" "num456"|
+last__________|"." ".."|
+last__y___long_|"y" "long last argument text"|
+last__z__|"z"|

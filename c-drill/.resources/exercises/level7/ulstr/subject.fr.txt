@@ -1,0 +1,19 @@
+Nom du programme : ulstr
+Fichiers rendus  : ulstr.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend une chaine et inverse la casse de toutes ses
+lettres. Les autres caracteres restent inchanges.
+Le resultat est affiche suivi d'un retour a la ligne.
+Si le nombre d'arguments n'est pas 1, le programme affiche un retour a la ligne.
+
+Exemples :
+$> ./ulstr "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte." | cat -e
+l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE.$
+$> ./ulstr "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e
+s'ENtoUrER De SecREt EsT Un SigNe dE MaNqUe dE COnnAIssANcE.  $
+$> ./ulstr "3:21 Ba  tOut  moUn ki Ka di KE m'en Ka fe fot" | cat -e
+3:21 bA  ToUT  MOuN KI kA DI ke M'EN kA FE FOT$
+$> ./ulstr | cat -e
+$

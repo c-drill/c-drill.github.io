@@ -1,0 +1,11 @@
+Nom du programme : ft_putnbr
+Fichiers rendus  : ft_putnbr.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui affiche le nombre passe en parametre sur la sortie
+standard. Le nombre peut etre negatif.
+
+Votre fonction doit etre prototypee ainsi :
+
+void	ft_putnbr(int nb);

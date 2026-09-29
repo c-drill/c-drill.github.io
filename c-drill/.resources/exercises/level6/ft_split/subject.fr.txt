@@ -1,0 +1,13 @@
+Nom du programme : ft_split
+Fichiers rendus  : ft_split.c
+Fonctions autorisees : malloc
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui prend une chaine, la decoupe en mots, et les renvoie
+sous forme d'un tableau de chaines termine par NULL.
+Un "mot" est une portion de la chaine delimitee soit par des espaces/tabulations
+/retours a la ligne, soit par le debut/la fin de la chaine.
+
+Votre fonction doit etre prototypee ainsi :
+
+char	**ft_split(char *str);

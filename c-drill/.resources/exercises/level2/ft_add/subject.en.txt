@@ -1,0 +1,11 @@
+Assignment name  : ft_add
+Expected files   : ft_add.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that takes a pointer to an int and adds 1 to the value it
+points to.
+
+Your function must be declared as follows:
+
+void	ft_add(int *ptr);

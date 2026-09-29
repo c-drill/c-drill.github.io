@@ -1,0 +1,21 @@
+none||
+first__hello__|"hello"|
+first__first___s|"first" "second"|
+first__j_aime_le|"j'aime le fromage" "de chevre"|
+first__one___two|"one" "two" "three"|
+first__only__|"only"|
+first__a___b__|"a" "b"|
+first__with_spac|"with spaces here" "x"|
+first__42___43__|"42" "43" "44"|
+first__UPPER___l|"UPPER" "lower"|
+first__x___y___z|"x" "y" "z" "w"|
+first__single_wo|"single word"|
+first__the___qui|"the" "quick" "brown"|
+first___________|"!@#" "$%^"|
+first__last_one_|"last one" "ignored"|
+first__start__|"start"|
+first__multi_wor|"multi word first" "b" "c"|
+first__num123___|"num123" "num456"|
+first__________|"." ".."|
+first__long_firs|"long first argument text" "y"|
+first__z__|"z"|

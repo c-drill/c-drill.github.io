@@ -1,0 +1,27 @@
+Assignment name  : replace_3_5
+Expected files   : replace_3_5.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string as an argument and displays it, replacing
+each character depending on its position (counting from 1):
+- if the position is a multiple of 3, it displays '5';
+- otherwise, if the position is a multiple of 5, it displays '3';
+- otherwise, it displays the character unchanged.
+The output is followed by a newline.
+If the number of arguments is not 1, the program displays a newline.
+A position that is a multiple of 15 is handled by the multiple-of-3 rule first
+(so it displays '5').
+
+Examples:
+$> ./replace_3_5 "abcdef" | cat -e
+ab5d35$
+$> ./replace_3_5 "HelloWorld!" | cat -e
+He5l35or53!$
+$> ./replace_3_5 "abcdefghijklmno" | cat -e
+ab5d35gh53k5mn5$
+$> ./replace_3_5 | cat -e
+$
+
+Note: reconstructed from students' feedback - the exact name, wording or
+examples may differ slightly from the real exam.

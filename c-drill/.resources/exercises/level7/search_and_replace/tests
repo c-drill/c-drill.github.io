@@ -1,0 +1,20 @@
+none||
+two|"abc" "a"|
+badlen|"abc" "ab" "c"|
+sr__Papache_e|"Papache est un sabre" "a" "o"|
+sr__zaz___r__|"zaz" "r" "u"|
+sr__hello___l|"hello" "l" "L"|
+sr__aaa___a__|"aaa" "a" "b"|
+sr__mississip|"mississippi" "s" "z"|
+sr__no_match_|"no match" "x" "y"|
+sr__Case_Test|"Case Test" "T" "t"|
+sr__12321___2|"12321" "2" "9"|
+sr__space_her|"space here" " " "_"|
+sr__repeat___|"repeat" "e" "3"|
+sr__single___|"single" "s" "S"|
+sr__end______|"end." "." "!"|
+sr__AaAa___A_|"AaAa" "A" "x"|
+sr__banana___|"banana" "n" "N"|
+sr__first_las|"first last" "t" "T"|
+sr__xyz___y__|"xyz" "y" "Y"|
+sr__double__s|"double  space" " " "-"|

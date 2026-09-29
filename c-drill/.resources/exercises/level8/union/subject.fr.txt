@@ -1,0 +1,22 @@
+Nom du programme : union
+Fichiers rendus  : union.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend deux chaines et affiche, sans doublons, les
+caracteres presents dans l'une ou l'autre, dans l'ordre ou ils apparaissent sur
+la ligne de commande (premiere chaine puis seconde).
+La sortie est suivie d'un retour a la ligne.
+Si le nombre d'arguments n'est pas 2, le programme affiche un retour a la ligne.
+
+Exemples :
+$> ./union zpadinton "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+zpadintoqefwjy$
+$> ./union ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6vewg4thras$
+$> ./union "rien" "cette phrase ne cache rien" | cat -e
+rienct phas$
+$> ./union | cat -e
+$
+$> ./union "rien" | cat -e
+$

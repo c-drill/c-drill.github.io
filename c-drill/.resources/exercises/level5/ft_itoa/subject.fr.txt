@@ -1,0 +1,12 @@
+Nom du programme : ft_itoa
+Fichiers rendus  : ft_itoa.c
+Fonctions autorisees : malloc
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui prend un int et le convertit en une chaine de
+caracteres terminee par un caractere nul. La fonction renvoie le resultat dans
+un tableau de char que vous devez allouer.
+
+Votre fonction doit etre prototypee ainsi :
+
+char	*ft_itoa(int nbr);

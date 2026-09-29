@@ -1,0 +1,12 @@
+Nom du programme : hello
+Fichiers rendus  : hello.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui affiche "Hello World!" suivi d'un retour a la ligne.
+
+Exemple :
+$> ./hello
+Hello World!
+$> ./hello | cat -e
+Hello World!$

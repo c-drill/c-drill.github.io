@@ -1,0 +1,11 @@
+Nom du programme : ft_swap
+Fichiers rendus  : ft_swap.c
+Fonctions autorisees : aucune
+--------------------------------------------------------------------------------
+
+Ecrire une fonction qui echange les valeurs de deux entiers dont les adresses
+sont passees en parametres.
+
+Votre fonction doit etre prototypee ainsi :
+
+void	ft_swap(int *a, int *b);

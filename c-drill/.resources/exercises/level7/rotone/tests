@@ -1,0 +1,22 @@
+none||
+two|"a" "b"|
+r1__abc__|"abc"|
+r1__xyz__|"xyz"|
+r1__XYZ__|"XYZ"|
+r1__z__|"z"|
+r1__Z__|"Z"|
+r1__Hello_Wor|"Hello World"|
+r1__zzz__|"zzz"|
+r1__aA_zZ__|"aA zZ"|
+r1__The_quick|"The quick brown"|
+r1__123______|"123 !@#"|
+r1__nopqrstuv|"nopqrstuvwxyza"|
+r1__CamelCase|"CamelCase"|
+r1__a__|"a"|
+r1__Y__|"Y"|
+r1__rotate_me|"rotate me"|
+r1__MixedCASE|"MixedCASE"|
+r1__nzy__|"nzy"|
+r1__NZY__|"NZY"|
+r1__one_step_|"one step forward"|
+r1__final__|"final"|

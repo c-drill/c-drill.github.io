@@ -1,0 +1,22 @@
+none||
+two|"a" "b"|
+ul__Hello_Wor|"Hello World!"|
+ul__abc__|"abc"|
+ul__ABC__|"ABC"|
+ul__MixEd_CaS|"MixEd CaSe"|
+ul__12345__|"12345"|
+ul__aAaA__|"aAaA"|
+ul__The_Quick|"The Quick Brown"|
+ul___________|"!@# $%^"|
+ul__lower__|"lower"|
+ul__UPPER__|"UPPER"|
+ul__a__|"a"|
+ul__Z__|"Z"|
+ul__CamelCase|"CamelCaseTest"|
+ul__reverse_T|"reverse THIS"|
+ul__123abcDEF|"123abcDEF"|
+ul__space_bar|"space bar"|
+ul__symbols_1|"symbols!123"|
+ul__eNd__|"eNd"|
+ul__sTaRt__|"sTaRt"|
+ul__final_Tes|"final Test String"|

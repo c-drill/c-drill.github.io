@@ -1,0 +1,26 @@
+# c-drill: C practice terminal (examshell) running in WebVM.
+FROM --platform=linux/386 docker.io/i386/debian:buster
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Buster is EOL: use the archived mirrors
+RUN echo "deb [trusted=yes] http://archive.debian.org/debian buster main contrib non-free" \
+  > /etc/apt/sources.list && \
+	echo "deb [trusted=yes] http://archive.debian.org/debian-security buster/updates main" \
+	>> /etc/apt/sources.list
+
+# Only what the simulator needs: compiler + binutils (nm), editor, tmux
+RUN apt-get clean && apt-get update && apt-get -y upgrade && \
+	apt-get -y install --no-install-recommends gcc libc6-dev binutils vim tmux less \
+	make perl-base coreutils locales && \
+	apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN useradd -m -s /bin/bash user && echo "user:password" | chpasswd && echo 'root:password' | chpasswd
+
+COPY --chown=user:user ./c-drill /home/user/c-drill
+COPY --chown=user:user ./dockerfiles/c_drill.bashrc /tmp/c_drill.bashrc
+COPY --chown=user:user ./dockerfiles/c_drill.tmux.conf /home/user/.tmux.conf
+RUN cat /tmp/c_drill.bashrc >> /home/user/.bashrc && rm /tmp/c_drill.bashrc && \
+	chmod +x /home/user/c-drill/examshell /home/user/c-drill/install.sh /home/user/c-drill/.resources/checker.sh
+
+WORKDIR /home/user/
+ENV HOME="/home/user" TERM="xterm-256color" USER="user" SHELL="/bin/bash" EDITOR="vim" LANG="C.UTF-8"
+CMD [ "/bin/bash", "--login" ]

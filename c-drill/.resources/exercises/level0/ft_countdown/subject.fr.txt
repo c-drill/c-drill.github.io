@@ -1,0 +1,11 @@
+Nom du programme : ft_countdown
+Fichiers rendus  : ft_countdown.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui affiche tous les chiffres dans l'ordre decroissant,
+suivis d'un retour a la ligne.
+
+Exemple :
+$> ./ft_countdown | cat -e
+9876543210$

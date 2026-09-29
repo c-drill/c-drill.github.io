@@ -1,0 +1,10 @@
+Nom du programme : ft_stars
+Fichiers rendus  : ft_stars.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui affiche sept caracteres '*' suivis d'un retour a la ligne.
+
+Exemple :
+$> ./ft_stars | cat -e
+*******$

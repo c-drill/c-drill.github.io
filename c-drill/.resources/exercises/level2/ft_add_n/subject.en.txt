@@ -1,0 +1,11 @@
+Assignment name  : ft_add_n
+Expected files   : ft_add_n.c
+Allowed functions: None
+--------------------------------------------------------------------------------
+
+Write a function that takes a pointer to an int and an int n, and adds n to the
+value the pointer points to.
+
+Your function must be declared as follows:
+
+void	ft_add_n(int *ptr, int n);

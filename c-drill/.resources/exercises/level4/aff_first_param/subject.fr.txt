@@ -1,0 +1,17 @@
+Nom du programme : aff_first_param
+Fichiers rendus  : aff_first_param.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme qui prend des chaines en argument et affiche son premier
+argument suivi d'un retour a la ligne.
+Si le nombre d'arguments est inferieur a 1, le programme affiche un retour a la
+ligne.
+
+Exemples :
+$> ./aff_first_param vincent mit "l'ane" dans un pre et "s'en" vint | cat -e
+vincent$
+$> ./aff_first_param "j'aime le fromage de chevre" | cat -e
+j'aime le fromage de chevre$
+$> ./aff_first_param | cat -e
+$
