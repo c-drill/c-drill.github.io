@@ -1,6 +1,6 @@
 diff -ruN a/.resources/checker.sh b/.resources/checker.sh
---- a/.resources/checker.sh	2026-09-29 11:59:11.447131554 +0000
-+++ b/.resources/checker.sh	2026-09-29 11:59:13.964131378 +0000
+--- a/.resources/checker.sh	2026-09-29 12:05:09.377106538 +0000
++++ b/.resources/checker.sh	2026-09-29 12:05:09.415106536 +0000
 @@ -4,6 +4,9 @@
  # Portable: bash 3.2 (macOS default) -> bash 5, GNU (Linux) and BSD (macOS) tools.
  #   -> no mapfile / assoc arrays, no "${empty[@]}" under set -u, no GNU-only flags.
@@ -11,12 +11,13 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
  GREEN="\033[0;32m"; RED="\033[0;31m"; YELLOW="\033[0;33m"; CYAN="\033[0;36m"
  BLUE="\033[0;34m"; BOLD="\033[1m"; DIM="\033[2m"; RESET="\033[0m"
  
-@@ -73,13 +76,17 @@
+@@ -73,19 +76,25 @@
  # --- build (needed for allowed-functions + prototype + tests) -----------------
  WORK="$(mktemp -d "${TMPDIR:-/tmp}/examshell.XXXXXX")"; trap 'rm -rf "$WORK"' EXIT
  cp "$RENDU" "$WORK/$EXO.c"
 +perl "$WD_DIR/long64.pl" "$WORK/$EXO.c" 2>/dev/null   # web: long -> long long (32-bit VM)
  cp "$EX_DIR/solution.c" "$WORK/solution.c"
++perl "$WD_DIR/long64.pl" "$WORK/solution.c" 2>/dev/null   # web: 64-bit long semantics
  EXTRA=""
  [ "$TYPE" = "function" ] && { cp "$EX_DIR/main.c" "$WORK/main.c"; EXTRA="main.c"; }
  cd "$WORK" || { assignment_fail; exit 1; }
@@ -30,7 +31,14 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
  
  # --- Allowed functions --------------------------------------------------------
  if [ $obj_ok -eq 0 ]; then
-@@ -129,7 +136,9 @@
+     # compiler/libc internals (Linux + macOS: nm prefixes C symbols with "_" there)
+     INTERNAL=" __stack_chk_fail __stack_chk_guard _GLOBAL_OFFSET_TABLE_ __errno_location __assert_fail"
+     INTERNAL="$INTERNAL __error __chkstk_darwin __bzero dyld_stub_binder "
++    INTERNAL="$INTERNAL __divdi3 __moddi3 __udivdi3 __umoddi3 __divmoddi4 __udivmoddi4 __muldi3 __ashldi3 __ashrdi3 __lshrdi3 __negdi2 __cmpdi2 __ucmpdi2 "   # web: i386 libgcc
+     undef="$(nm rendu.o 2>/dev/null | awk '$1=="U"{print $2} $2=="U"{print $3}' | sort -u)"
+     forbidden=""
+     for sym in $undef; do
+@@ -129,7 +138,9 @@
      assignment_fail; exit 1
  fi
  prereq "Compilation" "$OK"
@@ -41,7 +49,7 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
      echo -e "${RED}internal error: reference does not compile${RESET}"; assignment_fail; exit 1
  fi
  echo
-@@ -169,6 +178,16 @@
+@@ -169,6 +180,16 @@
  run_one(){
      local args="$1" stdin="$2" arr
      eval "arr=($args)"
@@ -58,7 +66,7 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
      # ${arr[@]+"${arr[@]}"}: an empty array is "unbound" under set -u in bash < 4.4
      # ulimit -f: a runaway printf loop cannot fill the disk (~20 MB max)
      { printf '%s' "$stdin" | ( ulimit -f 40000 2>/dev/null; limited ./stu ${arr[@]+"${arr[@]}"} ) > stu_out 2>/dev/null; } 2>/dev/null; rc_stu=$?
-@@ -184,6 +203,7 @@
+@@ -184,6 +205,7 @@
      TESTS[${#TESTS[@]}]="$line"
  done < "$EX_DIR/tests"
  total=0; passed=0; failed=0; idx=0
@@ -66,7 +74,7 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
  
  for line in ${TESTS[@]+"${TESTS[@]}"}; do
      [ -z "$line" ] && continue
-@@ -192,8 +212,8 @@
+@@ -192,8 +214,8 @@
      [ "$stdin" = "$rest" ] && stdin=""
      tname="${CAT}__#${idx}"
      run_one "$args" "$stdin"
@@ -77,7 +85,7 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
  
      if [ "$MODE" = "guided" ]; then
          # guided: show the outcome AND the output of EVERY test (pass or fail)
-@@ -209,9 +229,9 @@
+@@ -209,9 +231,9 @@
              echo -e "    ${GREEN}Output:${RESET}"; render_out stu_out
          else
              echo -e "    ${RED}Your stdout:${RESET}"; render_out stu_out
@@ -89,7 +97,7 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
          fi
          echo
      else
-@@ -224,14 +244,15 @@
+@@ -224,14 +246,15 @@
              echo
              [ -n "$args" ] && printf "    ${CYAN}Input:${RESET} %s\n" "$args"
              echo -e "    ${RED}Your stdout:${RESET}"; render_out stu_out
@@ -109,7 +117,7 @@ diff -ruN a/.resources/checker.sh b/.resources/checker.sh
  if [ "${failed:-0}" != "0" ]; then assignment_fail; exit 1; fi
 diff -ruN a/.resources/long64.pl b/.resources/long64.pl
 --- a/.resources/long64.pl	1970-01-01 00:00:00.000000000 +0000
-+++ b/.resources/long64.pl	2026-09-29 11:59:13.964131378 +0000
++++ b/.resources/long64.pl	2026-09-29 12:05:09.415106536 +0000
 @@ -0,0 +1,16 @@
 +#!/usr/bin/perl
 +# c-drill (web only): the VM is 32-bit (long = 4 bytes) but the exam is 64-bit
@@ -128,8 +136,8 @@ diff -ruN a/.resources/long64.pl b/.resources/long64.pl
 +}
 +open(my $out, '>', $f) or die; print $out join('', map { defined $_ ? $_ : '' } @parts); close $out;
 diff -ruN a/.resources/main/colors.sh b/.resources/main/colors.sh
---- a/.resources/main/colors.sh	2026-09-29 11:59:11.475131552 +0000
-+++ b/.resources/main/colors.sh	2026-09-29 11:59:13.964131378 +0000
+--- a/.resources/main/colors.sh	2026-09-29 12:05:09.382106538 +0000
++++ b/.resources/main/colors.sh	2026-09-29 12:05:09.415106536 +0000
 @@ -8,3 +8,11 @@
  MAGENTA="\033[0;35m"
  CYAN="\033[0;36m"
@@ -143,8 +151,8 @@ diff -ruN a/.resources/main/colors.sh b/.resources/main/colors.sh
 +  printf '\033[H\033[2J\033[3J%s\n' "$CDRILL_LABEL"
 +}
 diff -ruN a/.resources/main/exam.sh b/.resources/main/exam.sh
---- a/.resources/main/exam.sh	2026-09-29 11:59:11.475131552 +0000
-+++ b/.resources/main/exam.sh	2026-09-29 11:59:13.964131378 +0000
+--- a/.resources/main/exam.sh	2026-09-29 12:05:09.382106538 +0000
++++ b/.resources/main/exam.sh	2026-09-29 12:05:09.415106536 +0000
 @@ -7,10 +7,10 @@
  trap cleanup_rendu EXIT INT TERM HUP
  
@@ -177,8 +185,8 @@ diff -ruN a/.resources/main/exam.sh b/.resources/main/exam.sh
          echo -e "${CYAN}$T_CURRENT_SCORE : $EXAM_SCORE / $MAX_SCORE${RESET}"
          sleep 2; break ;;
 diff -ruN a/.resources/main/i18n.sh b/.resources/main/i18n.sh
---- a/.resources/main/i18n.sh	2026-09-29 11:59:11.475131552 +0000
-+++ b/.resources/main/i18n.sh	2026-09-29 11:59:13.965131378 +0000
+--- a/.resources/main/i18n.sh	2026-09-29 12:05:09.382106538 +0000
++++ b/.resources/main/i18n.sh	2026-09-29 12:05:09.416106536 +0000
 @@ -14,8 +14,8 @@
    T_BACK="Retour"; T_PRESS_RETURN="Appuie sur Entrée pour revenir..."
    T_PRESS_CONTINUE="Appuie sur Entrée pour continuer..."
@@ -202,8 +210,8 @@ diff -ruN a/.resources/main/i18n.sh b/.resources/main/i18n.sh
    T_UNKNOWN_CMD="Unknown command."
    T_LEVEL="Level"; T_LEVEL_WORD="level"
 diff -ruN a/.resources/main/intro.sh b/.resources/main/intro.sh
---- a/.resources/main/intro.sh	2026-09-29 11:59:11.475131552 +0000
-+++ b/.resources/main/intro.sh	2026-09-29 11:59:13.964131378 +0000
+--- a/.resources/main/intro.sh	2026-09-29 12:05:09.382106538 +0000
++++ b/.resources/main/intro.sh	2026-09-29 12:05:09.415106536 +0000
 @@ -5,10 +5,10 @@
  source "$MAIN/i18n.sh"; source "$MAIN/meta.sh"
  
@@ -236,8 +244,8 @@ diff -ruN a/.resources/main/intro.sh b/.resources/main/intro.sh
    esac
  done
 diff -ruN a/.resources/main/lang.sh b/.resources/main/lang.sh
---- a/.resources/main/lang.sh	2026-09-29 11:59:11.475131552 +0000
-+++ b/.resources/main/lang.sh	2026-09-29 11:59:13.965131378 +0000
+--- a/.resources/main/lang.sh	2026-09-29 12:05:09.382106538 +0000
++++ b/.resources/main/lang.sh	2026-09-29 12:05:09.416106536 +0000
 @@ -19,8 +19,7 @@
  choose_language() {
      local main_dir; main_dir="$(dirname "${BASH_SOURCE[0]}")"
@@ -249,8 +257,8 @@ diff -ruN a/.resources/main/lang.sh b/.resources/main/lang.sh
      printf "${CYAN}║${GREEN}            Choose language  /  Choisis la langue          ${CYAN}║${RESET}\n"
      printf "${CYAN}╚═══════════════════════════════════════════════════════════╝${RESET}\n"
 diff -ruN a/.resources/main/session_lib.sh b/.resources/main/session_lib.sh
---- a/.resources/main/session_lib.sh	2026-09-29 11:59:11.475131552 +0000
-+++ b/.resources/main/session_lib.sh	2026-09-29 11:59:13.965131378 +0000
+--- a/.resources/main/session_lib.sh	2026-09-29 12:05:09.382106538 +0000
++++ b/.resources/main/session_lib.sh	2026-09-29 12:05:09.416106536 +0000
 @@ -33,9 +33,9 @@
    cp "$subj" "$rdir/subject/$exo.txt" 2>/dev/null
  
@@ -291,8 +299,8 @@ diff -ruN a/.resources/main/session_lib.sh b/.resources/main/session_lib.sh
        "" ) : ;;
        *) echo -e "${RED}$T_UNKNOWN_CMD${RESET}"; sleep 1 ;;
 diff -ruN a/.resources/main/training.sh b/.resources/main/training.sh
---- a/.resources/main/training.sh	2026-09-29 11:59:11.475131552 +0000
-+++ b/.resources/main/training.sh	2026-09-29 11:59:13.964131378 +0000
+--- a/.resources/main/training.sh	2026-09-29 12:05:09.382106538 +0000
++++ b/.resources/main/training.sh	2026-09-29 12:05:09.415106536 +0000
 @@ -8,7 +8,7 @@
  
  choose_mode(){          # sets global CMODE (exam|guided) or empty
@@ -326,7 +334,7 @@ diff -ruN a/.resources/main/training.sh b/.resources/main/training.sh
    printf "${GREEN}${BOLD}%s${RESET}" "$T_CHOICE"
 diff -ruN a/.resources/watchdog.c b/.resources/watchdog.c
 --- a/.resources/watchdog.c	1970-01-01 00:00:00.000000000 +0000
-+++ b/.resources/watchdog.c	2026-09-29 11:59:13.964131378 +0000
++++ b/.resources/watchdog.c	2026-09-29 12:05:09.415106536 +0000
 @@ -0,0 +1,27 @@
 +/* c-drill (web version only): WebVM cannot interrupt a busy loop (no timeout,
 + * no kill), so the student's program is built with

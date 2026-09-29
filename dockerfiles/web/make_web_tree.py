@@ -37,9 +37,17 @@ edit('checker.sh', [
  'WD_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"\n'
  'ulimit -f 40000 2>/dev/null        # runaway output guard, once for the whole run\n', 1),
 # long is 4 bytes in the 32-bit VM, 8 at the exam: compile a rewritten copy
+# i386: 64-bit arithmetic (long long) is done by libgcc helpers, not user calls
+('    INTERNAL="$INTERNAL __error __chkstk_darwin __bzero dyld_stub_binder "\n',
+ '    INTERNAL="$INTERNAL __error __chkstk_darwin __bzero dyld_stub_binder "\n'
+ '    INTERNAL="$INTERNAL __divdi3 __moddi3 __udivdi3 __umoddi3 __divmoddi4 __udivmoddi4 __muldi3 __ashldi3 __ashrdi3 __lshrdi3 __negdi2 __cmpdi2 __ucmpdi2 "   # web: i386 libgcc\n', 1),
 ('cp "$RENDU" "$WORK/$EXO.c"\n',
  'cp "$RENDU" "$WORK/$EXO.c"\n'
  'perl "$WD_DIR/long64.pl" "$WORK/$EXO.c" 2>/dev/null   # web: long -> long long (32-bit VM)\n', 1),
+# the reference solutions also assume a 64-bit long (e.g. ft_itoa with INT_MIN)
+('cp "$EX_DIR/solution.c" "$WORK/solution.c"\n',
+ 'cp "$EX_DIR/solution.c" "$WORK/solution.c"\n'
+ 'perl "$WD_DIR/long64.pl" "$WORK/solution.c" 2>/dev/null   # web: 64-bit long semantics\n', 1),
 ('"$CC" $FLAGS "$EXO.c" $EXTRA -o stu 2> cc_err; build_ok=$?',
  '# web: WebVM cannot kill a busy loop -> self-stopping build (watchdog.c, 5 s)\n'
  'WD_O="$WD_DIR/watchdog.o"\n'
