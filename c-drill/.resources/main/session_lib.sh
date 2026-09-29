@@ -64,7 +64,6 @@ run_exercise(){
         if [ $rc -eq 0 ] && [ "$is_exam" = "1" ]; then sleep 1; return 0; fi
         read -rp "$T_PRESS_CONTINUE" _
         ;;
-      vim|vi|edit) "${EDITOR:-vim}" "$cfile" ;;   # handy when there is only one terminal (web version)
       exit) return 255 ;;
       "" ) : ;;
       *) echo -e "${RED}$T_UNKNOWN_CMD${RESET}"; sleep 1 ;;
