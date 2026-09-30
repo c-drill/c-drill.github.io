@@ -1,0 +1,29 @@
+Nom du programme : repeat_alpha
+Fichiers rendus  : repeat_alpha.c
+Fonctions autorisees : write
+--------------------------------------------------------------------------------
+
+Ecrire un programme repeat_alpha qui prend une chaine et l'affiche en repetant
+chaque caractere alphabetique autant de fois que son index dans l'alphabet,
+suivie d'un retour a la ligne.
+
+'a' devient 'a', 'b' devient 'bb', 'e' devient 'eeeee', etc...
+
+La casse reste inchangee.
+
+Si le nombre d'arguments n'est pas 1, affiche juste un retour a la ligne.
+
+Exemples :
+
+$>./repeat_alpha "abc"
+abbccc
+$>./repeat_alpha "Alex." | cat -e
+Alllllllllllleeeeexxxxxxxxxxxxxxxxxxxxxxxx.$
+$>./repeat_alpha 'abacadaba 42!' | cat -e
+abbacccaddddabba 42!$
+$>./repeat_alpha | cat -e
+$
+$>
+$>./repeat_alpha "" | cat -e
+$
+$>

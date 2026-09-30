@@ -1,0 +1,19 @@
+none||
+ra1|"abc"|
+ra2|"Alex."|
+ra3|'abacadaba 42!'|
+ra4|""|
+ra5|"a" "b"|
+ra6|"abcdefghijklmnopqrstuvwxyz"|
+ra7|"ABCDEFGHIJKLMNOPQRSTUVWXYZ"|
+ra8|"zZ"|
+ra9|"0123456789 !?.,;:"|
+ra10|"[\`{@"|
+ra11|$'\tTab\tHere\t'|
+ra12|"   "|
+ra13|"Hello World"|
+ra14|"The quick brown fox jumps over the lazy dog."|
+ra15|"yY aA mM nN"|
+ra16|"abc" "def" "ghi"|
+ra17|"x"|
+ra18|"42 is 42"|

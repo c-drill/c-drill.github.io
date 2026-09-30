@@ -51,7 +51,7 @@ limit uses `timeout`, or `gtimeout`/`perl` when it is missing (macOS).
   non-compiling file shows the compiler/link error; a wrong body shows your
   (possibly garbage) output vs the expected one.
 
-## Levels (0 → 10, 37 exercises)
+## Levels (0 → 10, 38 exercises)
 
 - 0: hello, ft_countdown, maff_alpha, ft_stars, ft_print_numbers
 - 1: fizzbuzz, buzzfizz, ft_putnbr
@@ -61,7 +61,7 @@ limit uses `timeout`, or `gtimeout`/`perl` when it is missing (macOS).
 - 5: ft_atoi, ft_itoa
 - 6: ft_split
 - 7: print_odd, replace_3_5, rot_13, rotone, search_and_replace, ulstr, first_word,
-  last_word, alpha_mirror
+  last_word, alpha_mirror, repeat_alpha
 - 8: inter, union, wdmatch
 - 9: ft_range, ft_rrange
 - 10: count_alpha

@@ -11,7 +11,7 @@ meta_level_subjects(){ case "$1" in
   4) echo "aff_first_param aff_last_param" ;;
   5) echo "ft_atoi ft_itoa" ;;
   6) echo "ft_split" ;;
-  7) echo "print_odd replace_3_5 rot_13 rotone search_and_replace ulstr first_word last_word alpha_mirror" ;;
+  7) echo "print_odd replace_3_5 rot_13 rotone search_and_replace ulstr first_word last_word alpha_mirror repeat_alpha" ;;
   8) echo "inter union wdmatch" ;;
   9) echo "ft_range ft_rrange" ;;
   10) echo "count_alpha" ;;
